@@ -1,11 +1,7 @@
 import requests
 import time
 import json
-import xlrd
-import xlwt
-import datetime
-import os
-from openpyxl import load_workbook
+from lxml import etree
 from openpyxl import Workbook
 
 
@@ -52,6 +48,10 @@ if __name__ == '__main__':
     # print((datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d"))
     fund_spider = FundSpider()
     fund_spider.run()
-
+    # res = requests.get("https://m.1234567.com.cn/",headers={"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"}).content.decode()
+    # html_str = etree.HTML(res)
+    # li_list = html_str.xpath('//div[@class="index_section_content ui-list"]')
+    # for li in li_list:
+    #     print(li.xpath(".//a/text()"))
     # str = "a   !@# b"
     # print(re.search("a[^\w]*", str).group())
